@@ -36,10 +36,11 @@ def convert_to_float(price):
 
 
 def get_list_sizes(sizes):
-    list_sizes = [span.get_attribute('data-size') for span in sizes]
-
-    return list_sizes
-
+    try:
+        list_sizes = [span.get_attribute('data-size') for span in sizes]
+        return list_sizes
+    except Exception as err:
+        return f"Unable to create а list. Details: {str(err)}"
 
 def create_json(result_dict):
     try:
