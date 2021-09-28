@@ -55,6 +55,7 @@ def create_json(result_dict):
 def app():
     try:
         browser = init_settings()
+        print(browser)
         check_page_availability(browser)
         item_name = browser.find_element_by_css_selector('.product-actions .product-name').text
         item_price = browser.find_element_by_css_selector('div.product-prices span.product-sale').text
